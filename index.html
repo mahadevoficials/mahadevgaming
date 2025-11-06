@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahadev Betting</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: #0a0a0a;
+      overflow-x: hidden;
+    }
+
+    #intro-section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden; /* important to prevent scroll from pseudo-element */
+    }
+
+    .logo-img {
+      width: 300px;
+      animation: rotateLogo 5s linear infinite, pulse 2s infinite;
+      margin-bottom: 20px;
+      z-index: 1;
+    }
+
+    @keyframes rotateLogo {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(180deg); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); filter: drop-shadow(0 0 15px #ffdd57); }
+      50% { transform: scale(1.1); filter: drop-shadow(0 0 30px #ffdd57); }
+      100% { transform: scale(1); filter: drop-shadow(0 0 15px #ffdd57); }
+    }
+
+    .site-title {
+      font-size: 3rem;
+      color: #ffc107;
+      text-shadow: 0 0 10px #ffc107, 0 0 20px #ffdd57;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      color: #fff;
+      text-shadow: 0 0 10px #ffdd57;
+      margin: 15px 0 30px 0;
+      animation: fadeIn 2.5s ease forwards;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    #startBettingBtn {
+      font-size: 1.2rem;
+      border-radius: 50px;
+      padding: 12px 40px;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ffdd57, #ffc107);
+      color: #000;
+      box-shadow: 0 0 20px #ffdd57, 0 0 40px #ffdd57 inset;
+      border: none;
+      animation: fadeIn 3s ease forwards;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+
+    #startBettingBtn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 40px #ffdd57, 0 0 60px #ffdd57 inset;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Gaming effect background */
+    #intro-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,221,87,0.05) 0%, transparent 70%);
+      animation: rotateBG 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes rotateBG {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Optional: floating gaming particles */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: #ffc107;
+      opacity: 0.3;
+      animation: floatParticle linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes floatParticle {
+      0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.3; }
+      50% { transform: translateY(-50px) translateX(30px) scale(1.2); opacity: 0.6; }
+      100% { transform: translateY(-100px) translateX(-20px) scale(1); opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+
+  <section id="intro-section" class="text-center">
+    <img src="/logo1.gif" alt="Mahadev Logo" class="logo-img">
+    <h1 class="site-title">Mahadev Betting</h1>
+    <p class="tagline">Play With Power 🔱</p>
+    <button class="btn" id="startBettingBtn">Start Betting</button>
+
+    <!-- Particles -->
+    <div class="particle" style="width:8px; height:8px; top:20%; left:30%; animation-duration:12s;"></div>
+    <div class="particle" style="width:12px; height:12px; top:50%; left:70%; animation-duration:15s;"></div>
+    <div class="particle" style="width:6px; height:6px; top:70%; left:40%; animation-duration:10s;"></div>
+    <div class="particle" style="width:10px; height:10px; top:30%; left:80%; animation-duration:18s;"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
